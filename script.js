@@ -1,26 +1,27 @@
-const board = document.getElementById("board");
-const userInput = 100; //placeholder value - will change later
+const grid = document.getElementById("grid");
+const userInput = 50; //placeholder value - will change later
 
-const nOfDivs = () => {
-  return board.clientWidth / userInput;
+// Divide grid width (600px) by the number chosen by the user to generate the [height × width] of each cell/square.
+const calculateCellSize = () => {
+  return grid.clientWidth / userInput;
 };
 
-function createSquares(size) {
+// Create a cell/square.
+function generateCells(dimensions) {
   const div = document.createElement("div");
-  div.classList.add("box");
-  div.style.width = `${size}`;
-  div.style.height = `${size}`;
+  div.classList.add("cell");
   return div;
 }
 
-function makeBoard(userInput) {
+// Make the grid using a loop for columns and a loop for rows.
+function makeGrid(userInput) {
   for (let i = 0; i < userInput; i++) {
+    grid.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`;
     for (let j = 0; j < userInput; j++) {
-      board.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`;
-      board.style.gridTemplateRows = `repeat(${userInput}, 1fr)`;
-      board.appendChild(createSquares(nOfDivs()));
+      grid.style.gridTemplateRows = `repeat(${userInput}, 1fr)`;
+      grid.appendChild(generateCells(calculateCellSize()));
     }
   }
 }
 
-makeBoard(userInput);
+makeGrid(userInput);
