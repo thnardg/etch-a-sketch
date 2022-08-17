@@ -1,5 +1,5 @@
 const grid = document.getElementById("grid");
-const userInput = 50; //placeholder value - will change later
+const userInput = 30; //placeholder value - will change later
 
 // Divide grid width (600px) by the number chosen by the user to generate the [height × width] of each cell/square.
 const calculateCellSize = () => {
@@ -7,14 +7,14 @@ const calculateCellSize = () => {
 };
 
 // Create a cell/square.
-function generateCells(dimensions) {
+const generateCells = (dimensions) => {
   const div = document.createElement("div");
   div.classList.add("cell");
   return div;
-}
+};
 
 // Make the grid using a loop for columns and a loop for rows.
-function makeGrid(userInput) {
+const makeGrid = (userInput) => {
   for (let i = 0; i < userInput; i++) {
     grid.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`;
     for (let j = 0; j < userInput; j++) {
@@ -22,6 +22,12 @@ function makeGrid(userInput) {
       grid.appendChild(generateCells(calculateCellSize()));
     }
   }
-}
+};
+
+grid.addEventListener("mouseover", function (e) {
+  if (e.target.matches(".cell")) {
+    e.target.classList.add("active");
+  }
+});
 
 makeGrid(userInput);
