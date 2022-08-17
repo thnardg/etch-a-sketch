@@ -1,0 +1,19 @@
+div {
+  border: 0.3px solid gray;
+}
+
+#board {
+  height: 540px;
+  width: 540px;
+  display: flex;
+  overflow: hidden;
+}
+
+.box {
+  height: 30px;
+  width: 30px;
+}
+
+.box-color {
+  background-color: aqua;
+}
