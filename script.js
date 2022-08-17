@@ -1,5 +1,5 @@
 const board = document.getElementById("board");
-const userInput = 10; //placeholder value - will change later
+const userInput = 100; //placeholder value - will change later
 
 const nOfDivs = () => {
   return board.clientWidth / userInput;
@@ -16,9 +16,11 @@ function createSquares(size) {
 function makeBoard(userInput) {
   for (let i = 0; i < userInput; i++) {
     for (let j = 0; j < userInput; j++) {
+      board.style.gridTemplateColumns = `repeat(${userInput}, 1fr)`;
+      board.style.gridTemplateRows = `repeat(${userInput}, 1fr)`;
       board.appendChild(createSquares(nOfDivs()));
     }
   }
 }
 
-makeBoard(10);
+makeBoard(userInput);
