@@ -11,16 +11,19 @@ let gridSize = 20;
 twentyBtn.addEventListener("click", () => {
   grid.innerHTML = "";
   gridSize = 20;
+  console.log("twenty");
   makeGrid(gridSize);
 });
 thirtyBtn.addEventListener("click", () => {
   grid.innerHTML = "";
   gridSize = 30;
+  console.log("thirty");
   makeGrid(gridSize);
 });
 fortyBtn.addEventListener("click", () => {
   grid.innerHTML = "";
   gridSize = 40;
+  console.log("forty");
   makeGrid(gridSize);
 });
 
