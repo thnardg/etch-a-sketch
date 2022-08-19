@@ -7,7 +7,7 @@ const fortyBtn = document.getElementById("40-btn");
 const rainbow = document.getElementById("rainbow-btn");
 const color = document.getElementById("color-btn");
 const eraser = document.getElementById("eraser-btn");
-const colorPicker = document.getElementById("colorpicker");
+const colorPicker = document.getElementById("color-picker");
 
 // Set default values.
 let gridSize = 20;
@@ -62,7 +62,7 @@ const makeGrid = (gridSize) => {
 
 // Add painting movement with 'mouseover' event and set the background color.
 grid.addEventListener("mouseover", (event) => {
-  if (event.buttons == 1 && event.target.matches(".cell")) {
+  if (event.buttons === 1 && event.target.matches(".cell")) {
     event.preventDefault();
     event.target.classList.add("active");
     if (event.target.matches(".cell.active")) {
