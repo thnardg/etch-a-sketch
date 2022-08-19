@@ -9,18 +9,24 @@
   </head>
   <body>
     <div class="board">
-      <p>etch · a · sketch</p>
-      <button id="reset-btn">reset</button>
-      <button id="rainbow-btn">rainbow</button>
-      <button id="color-btn">color</button>
-      <button id="eraser-btn">eraser</button>
-      <input type="color" id="color-picker" value="#7fffd4" />
-      <button id="20-btn">20 × 20</button>
-      <button id="30-btn">30 × 30</button>
-      <button id="40-btn">40 × 40</button>
+      <h1 class="title">etch · a · sketch</h1>
+      <div class="tool-bar">
+        <button id="rainbow-btn">rainbow</button>
+        <button id="color-btn">solid color</button>
+        <input type="color" id="color-picker" value="#7fffd4" />
+        <button id="eraser-btn">eraser</button>
+        <button id="reset-btn">reset</button>
+      </div>
       <div id="grid"></div>
+      <div class="size-bar">
+        <button class="size-btn" id="20-btn">20 × 20</button>
+        <button class="size-btn" id="30-btn">30 × 30</button>
+        <button class="size-btn" id="40-btn">40 × 40</button>
+      </div>
     </div>
-    <footer><p>Created by thnardg</p></footer>
+    <footer>
+      <p>Created by <a href="#">thnardg</a></p>
+    </footer>
   </body>
   <script src="script.js"></script>
 </html>
